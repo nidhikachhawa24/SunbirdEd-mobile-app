@@ -985,6 +985,9 @@ export class CoursesPage implements OnInit, OnDestroy {
             contentSearchCriteria.grade = applyProfileFilter(this.appGlobalService, this.profile.grade,
               contentSearchCriteria.grade, 'gradeLevel');
           }
+
+          contentSearchCriteria.channel = applyProfileFilter(this.appGlobalService, ["01358974742001254423"],
+          contentSearchCriteria.channel, 'channel');
         }
         return contentSearchCriteria;
       }

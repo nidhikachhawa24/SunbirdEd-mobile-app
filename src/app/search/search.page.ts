@@ -918,6 +918,7 @@ export class SearchPage implements OnInit, AfterViewInit, OnDestroy, OnTabViewWi
       mode: 'soft',
       framework: this.currentFrameworkId,
       languageCode: this.selectedLanguageCode,
+      channel: ["01358974742001254423"]
     };
 
     if (this.profile && this.source === PageId.GROUP_DETAIL && shouldApplyProfileFilter) {
@@ -935,6 +936,9 @@ export class SearchPage implements OnInit, AfterViewInit, OnDestroy, OnTabViewWi
         contentSearchRequest.grade = applyProfileFilter(this.appGlobalService, this.profile.grade,
           contentSearchRequest.grade, 'gradeLevel');
       }
+
+      contentSearchRequest.channel = applyProfileFilter(this.appGlobalService, ["01358974742001254423"],
+                contentSearchRequest.channel, 'channel');
     }
 
     this.isDialCodeSearch = false;
