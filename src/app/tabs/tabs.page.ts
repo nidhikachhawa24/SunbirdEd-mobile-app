@@ -12,6 +12,7 @@ import { IonTabs, ToastController } from '@ionic/angular';
 import { Events } from '@app/util/events';
 import { ProfileService, ProfileType, SharedPreferences } from 'sunbird-sdk';
 import { LogoutHandlerService } from '@app/services/handlers/logout-handler.service';
+import { tenantChannelId } from '@app/configuration/configuration';
 
 @Component({
   selector: 'app-tabs',
@@ -60,7 +61,7 @@ export class TabsPage implements OnInit, AfterViewInit {
           requiredFields: ProfileConstants.REQUIRED_FIELDS,
         }).toPromise();
         const orgData: any = serverProfile.rootOrg;
-        if (orgData.id !== '01358974742001254423') {
+        if (orgData.id !== tenantChannelId) {
           this.commonUtilService.showToast("No Authorized");
           this.logoutHandlerService.onLogout();
         }

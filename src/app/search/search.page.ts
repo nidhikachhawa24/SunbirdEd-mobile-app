@@ -60,6 +60,7 @@ import { FormConstants } from '../form.constants';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { DiscoverComponent } from '../components/discover/discover.page';
 import { OnTabViewWillEnter } from './../tabs/on-tab-view-will-enter';
+import { tenantChannelId } from '@app/configuration/configuration';
 
 declare const cordova;
 @Component({
@@ -918,7 +919,7 @@ export class SearchPage implements OnInit, AfterViewInit, OnDestroy, OnTabViewWi
       mode: 'soft',
       framework: this.currentFrameworkId,
       languageCode: this.selectedLanguageCode,
-      channel: ["01358974742001254423"]
+      channel: [tenantChannelId]
     };
 
     if (this.profile && this.source === PageId.GROUP_DETAIL && shouldApplyProfileFilter) {
@@ -937,7 +938,7 @@ export class SearchPage implements OnInit, AfterViewInit, OnDestroy, OnTabViewWi
           contentSearchRequest.grade, 'gradeLevel');
       }
 
-      contentSearchRequest.channel = applyProfileFilter(this.appGlobalService, ["01358974742001254423"],
+      contentSearchRequest.channel = applyProfileFilter(this.appGlobalService, [tenantChannelId],
                 contentSearchRequest.channel, 'channel');
     }
 

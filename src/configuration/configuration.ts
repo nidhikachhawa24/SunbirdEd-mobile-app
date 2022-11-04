@@ -10,6 +10,7 @@ export const configuration = {
 
 export const tenantOrgName = "Dhwani";
 export const tenantLogo = "resources/android/splash/drawable-hdpi-splash.png";
+export const tenantChannelId = "01358974742001254423";
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
