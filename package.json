@@ -287,7 +287,9 @@
         "PLAY_SERVICES_VERSION": "15.0.1"
       }
     },
-    "platforms": []
+    "platforms": [
+      "android"
+    ]
   },
   "jest": {
     "browser": false,

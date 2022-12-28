@@ -6,9 +6,9 @@
     <ion-refresher-content refreshingSpinner="circles"></ion-refresher-content>
   </ion-refresher>
 
-  <div *ngIf="showSignInCard" class="enrolled-course-bg">
-    <app-sign-in-card [source]="'courses'" (valueChange)="showOfflineWarning($event)"></app-sign-in-card>
-  </div>
+<!--  <div *ngIf="showSignInCard" class="enrolled-course-bg">-->
+<!--    <app-sign-in-card [source]="'courses'" (valueChange)="showOfflineWarning($event)"></app-sign-in-card>-->
+<!--  </div>-->
   <div *ngIf="!guestUser" class="pt-8 enrolled-course-bg">
     <ng-container *ngIf="showLoader && enrolledCourses && enrolledCourses.length === 0">
       <sb-course-cards-hlist [type]="courseCardType.MY_COURSE_RECENTLY_VIEWED_CARD_GRID" [isLoading]="showLoader">

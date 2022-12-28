@@ -109,6 +109,7 @@ export class LanguageSettingsPage {
     }
 
     this.appName = await this.commonUtilService.getAppName();
+    this.loginWithKeyCloak();
 
     if (this.router.url === '/' + RouterLinks.LANGUAGE_SETTING || this.router.url === '/' + RouterLinks.LANGUAGE_SETTING + '/' + 'true') {
       setTimeout(() => {

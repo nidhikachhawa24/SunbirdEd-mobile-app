@@ -109,7 +109,7 @@ export class ApplicationHeaderComponent implements OnInit, OnDestroy {
       this.showReports= res
     })
     this.getUnreadNotifications();
-    const extrasData = this.router.getCurrentNavigation().extras.state;
+    const extrasData = this.router.getCurrentNavigation()?.extras?.state;
     this.skipNavigation = extrasData;
   }
 

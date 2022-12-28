@@ -12,6 +12,7 @@ import { IonTabs, ToastController } from '@ionic/angular';
 import { Events } from '@app/util/events';
 import { ProfileService, ProfileType, SharedPreferences } from 'sunbird-sdk';
 import { LogoutHandlerService } from '@app/services/handlers/logout-handler.service';
+import { tenantChannelId } from '@app/configuration/configuration';
 
 @Component({
   selector: 'app-tabs',
@@ -60,7 +61,7 @@ export class TabsPage implements OnInit, AfterViewInit {
           requiredFields: ProfileConstants.REQUIRED_FIELDS,
         }).toPromise();
         const orgData: any = serverProfile.rootOrg;
-        if (orgData.id !== '01358974742001254423') {
+        if (orgData.id !== tenantChannelId) {
           this.commonUtilService.showToast("No Authorized");
           this.logoutHandlerService.onLogout();
         }
@@ -78,8 +79,9 @@ export class TabsPage implements OnInit, AfterViewInit {
   private async refreshTabs(data?) {
     initTabs(this.container, await this.getInitialTabs(await this.appGlobalService.authService.getSession().toPromise()));
     this.tabs = this.container.getAllTabs();
+    this.tabs[0].disabled = true;
     if (!data || (data && !data.navigateToCourse)) {
-    this.router.navigate(['/tabs/' + this.tabs[0].root]);
+    this.router.navigate(['/tabs/' + this.tabs[1].root]);
     }
   }
 
@@ -121,6 +123,7 @@ export class TabsPage implements OnInit, AfterViewInit {
       (this.tabRef.outlet.component as OnTabViewWillEnter).tabViewWillEnter();
     }
     this.tabs = this.container.getAllTabs();
+//     this.tabs.splice(0,1);
     this.events.publish('update_header');
     this.events.subscribe('return_course', () => {
       setTimeout(() => {

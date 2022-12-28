@@ -918,7 +918,7 @@ export class SearchPage implements OnInit, AfterViewInit, OnDestroy, OnTabViewWi
       mode: 'soft',
       framework: this.currentFrameworkId,
       languageCode: this.selectedLanguageCode,
-      channel: ["01358974742001254423"]
+      channel: ["0135656861912678406"]
     };
 
     if (this.profile && this.source === PageId.GROUP_DETAIL && shouldApplyProfileFilter) {

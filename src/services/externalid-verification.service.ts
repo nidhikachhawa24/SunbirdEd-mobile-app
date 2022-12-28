@@ -70,7 +70,7 @@ export class ExternalIdVerificationService {
             requiredFields: ProfileConstants.REQUIRED_FIELDS,
         }).toPromise();
         const orgData: any = serverProfile.rootOrg;
-        if (orgData.id !== '01358974742001254423') {
+        if (orgData.id !== '0135656861912678406') {
           this.commonUtilService.showToast("No Authorized");
           this.logoutHandlerService.onLogout();
         }
