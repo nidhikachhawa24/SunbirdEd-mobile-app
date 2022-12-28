@@ -8,6 +8,8 @@ export const configuration = {
   debug: false
 };
 
+export const tenantOrgName = "SunbirdSaas";
+export const tenantLogo = "resources/android/splash/drawable-hdpi-splash.png";
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
