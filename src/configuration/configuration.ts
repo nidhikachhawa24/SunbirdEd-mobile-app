@@ -8,9 +8,9 @@ export const configuration = {
   debug: false
 };
 
-export const tenantOrgName = "Dhwani";
+export const tenantOrgName = "PraDigi One";
 export const tenantLogo = "resources/android/splash/drawable-hdpi-splash.png";
-export const tenantChannelId = "01358974742001254423";
+export const tenantChannelId = "01369885294383923244";
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
