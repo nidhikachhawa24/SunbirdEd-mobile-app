@@ -79,9 +79,8 @@ export class TabsPage implements OnInit, AfterViewInit {
   private async refreshTabs(data?) {
     initTabs(this.container, await this.getInitialTabs(await this.appGlobalService.authService.getSession().toPromise()));
     this.tabs = this.container.getAllTabs();
-    this.tabs[0].disabled = true;
     if (!data || (data && !data.navigateToCourse)) {
-    this.router.navigate(['/tabs/' + this.tabs[1].root]);
+    this.router.navigate(['/tabs/' + this.tabs[0].root]);
     }
   }
 
