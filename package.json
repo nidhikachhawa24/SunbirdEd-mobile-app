@@ -165,7 +165,7 @@
     "cordova-plugin-code-push": "^1.13.1",
     "cordova-plugin-device": "^2.1.0",
     "cordova-plugin-dialogs": "^2.0.2",
-    "cordova-plugin-document-viewer": "^0.9.13",
+    "cordova-plugin-document-viewer": "git+https://github.com/swayangjit/cordova-plugin-document-viewer.git",
     "cordova-plugin-fcm-with-dependecy-updated": "git+https://github.com/Sunbird-Ed/sb-cordova-plugin-fcm.git#release-3.4.0",
     "cordova-plugin-file": "^6.0.2",
     "cordova-plugin-file-opener2": "^2.2.1",
@@ -275,7 +275,6 @@
       "cordova-plugin-filepath": {},
       "cordova-plugin-chooser": {},
       "cordova-plugin-filepicker": {},
-      "cordova-plugin-document-viewer": {},
       "com-sarriaroman-photoviewer": {},
       "cordova-sqlite-storage": {},
       "cordova-plugin-telerik-imagepicker": {},
@@ -284,7 +283,8 @@
       "cordova-plugin-sunbirdsplash": {},
       "cordova-plugin-googleplus": {
         "PLAY_SERVICES_VERSION": "15.0.1"
-      }
+      },
+      "cordova-plugin-document-viewer": {}
     },
     "platforms": [
       "android"
