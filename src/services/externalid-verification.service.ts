@@ -14,6 +14,7 @@ import { SplaschreenDeeplinkActionHandlerDelegate } from './sunbird-splashscreen
 import { CommonUtilService } from './common-util.service';
 import { LocalCourseService } from './local-course.service';
 import { LogoutHandlerService } from '@app/services/handlers/logout-handler.service';
+import { tenantChannelId } from '@app/configuration/configuration';
 
 @Injectable()
 export class ExternalIdVerificationService {
@@ -70,7 +71,7 @@ export class ExternalIdVerificationService {
             requiredFields: ProfileConstants.REQUIRED_FIELDS,
         }).toPromise();
         const orgData: any = serverProfile.rootOrg;
-        if (orgData.id !== '01358974742001254423') {
+        if (orgData.id !== tenantChannelId) {
           this.commonUtilService.showToast("No Authorized");
           this.logoutHandlerService.onLogout();
         }
