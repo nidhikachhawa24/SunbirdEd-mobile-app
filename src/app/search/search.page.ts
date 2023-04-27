@@ -914,7 +914,7 @@ export class SearchPage implements OnInit, AfterViewInit, OnDestroy, OnTabViewWi
     const contentSearchRequest: ContentSearchCriteria = {
       searchType: SearchType.SEARCH,
       query: this.searchKeywords,
-      primaryCategories: this.primaryCategories,
+      primaryCategories: ['course'],
       facets: facets ? facets : Search.FACETS,
       mode: 'soft',
       framework: this.currentFrameworkId,
