@@ -101,6 +101,16 @@ export class UserTypeSelectionPage implements OnDestroy {
       this.selectedUserType = await this.preferences.getString(PreferenceKey.SELECTED_USER_TYPE).toPromise();
     }
     this.supportedUserTypeConfig = await this.profileHandler.getSupportedUserTypes();
+    if (this.supportedUserTypeConfig && this.supportedUserTypeConfig.length) {
+      for (let count = 0; count < this.supportedUserTypeConfig.length; count++) {
+        if (this.supportedUserTypeConfig[count].code === "student") {
+          this.supportedUserTypeConfig.splice(count, 1);
+        }
+        else if (this.supportedUserTypeConfig[count].code === "parent") {
+          this.supportedUserTypeConfig.splice(count, 1);
+        }
+      }
+    }
     if (this.router.url === '/' + RouterLinks.USER_TYPE_SELECTION) {
       setTimeout(() => {
         this.telemetryGeneratorService.generateImpressionTelemetry(

@@ -287,6 +287,13 @@ export class UserHomePage implements OnInit, OnDestroy, OnTabViewWillEnter {
     displayItems = this.mapContentFacteTheme(displayItems);
     this.checkHomeData(displayItems);
     this.displaySections = this.contentAggregatorHandler.populateIcons(displayItems);
+    if (this.displaySections && this.displaySections.length) {
+      for (let count = 0; count < this.displaySections.length; count++) {
+        if (this.displaySections[count].code === "browse_by_audience") {
+          this.displaySections.splice(count, 1);
+        }
+      }
+    }
     this.showorHideBanners();
     this.refresh = false;
     refresher ? refresher.target.complete() : null;
