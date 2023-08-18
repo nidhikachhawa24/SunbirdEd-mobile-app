@@ -18,6 +18,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { AuditState, CorrelationData, SharedPreferences } from 'sunbird-sdk';
 import { TagPrefixConstants } from '@app/services/segmentation-tag/segmentation-tag.service';
+import { LoginHandlerService } from '../../services';
 
 export interface ILanguages {
   label: string;
@@ -44,6 +45,7 @@ export class LanguageSettingsPage {
   headerConfig: any;
   headerObservable: any;
   appName = '';
+  skipNavigation: any;
 
   constructor(
     @Inject('SHARED_PREFERENCES') private preferences: SharedPreferences,
@@ -56,10 +58,14 @@ export class LanguageSettingsPage {
     private headerService: AppHeaderService,
     private notification: NotificationService,
     private router: Router,
+    private loginHandlerService: LoginHandlerService,
     private location: Location,
     private activatedRoute: ActivatedRoute,
     private nativePageTransitions: NativePageTransitions
-  ) { }
+  ) {
+      const extrasData = this.router.getCurrentNavigation().extras.state;
+      this.skipNavigation = extrasData;
+  }
 
   ionViewDidEnter() {
     this.activatedRoute.params.subscribe(async params => {
@@ -304,7 +310,8 @@ export class LanguageSettingsPage {
           fixedPixelsBottom: 0
         };
         this.nativePageTransitions.slide(options);
-        this.router.navigate([RouterLinks.USER_TYPE_SELECTION]);
+//         this.router.navigate([RouterLinks.USER_TYPE_SELECTION]);
+        this.loginWithKeyCloak();
         this.preferences.putBoolean(PreferenceKey.IS_NEW_USER, true).toPromise();
       }
     } else {
@@ -327,6 +334,20 @@ export class LanguageSettingsPage {
         this.isFromSettings ? Environment.SETTINGS : Environment.ONBOARDING,
         true);
       this.location.back();
+    }
+  }
+
+  loginWithKeyCloak() {
+    this.loginHandlerService.signIn(this.skipNavigation).then(() => {
+      this.navigateBack(this.skipNavigation);
+    });
+  }
+
+  private navigateBack(skipNavigation) {
+    if ((skipNavigation && skipNavigation.navigateToCourse) ||
+      (skipNavigation && (skipNavigation.source === 'user' ||
+      skipNavigation.source === 'resources'))) {
+        this.location.back();
     }
   }
 }

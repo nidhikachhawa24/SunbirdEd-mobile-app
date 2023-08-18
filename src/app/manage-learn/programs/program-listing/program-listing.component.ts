@@ -93,7 +93,6 @@ export class ProgramListingComponent implements OnInit {
 
     loadMore() {
         this.page = this.page + 1;
-        this.getPrograms();
     }
 
 }

@@ -47,6 +47,7 @@ import { applyProfileFilter, updateFilterInSearchQuery } from '../../util/filter
 import { EnrollmentDetailsComponent } from '../components/enrollment-details/enrollment-details.component';
 import { PageFilterCallback, PageFilterPage } from '../page-filter/page-filter.page';
 import { TranslateService } from '@ngx-translate/core';
+import { tenantChannelId } from '@app/configuration/configuration';
 
 @Component({
   selector: 'app-courses',
@@ -985,6 +986,9 @@ export class CoursesPage implements OnInit, OnDestroy {
             contentSearchCriteria.grade = applyProfileFilter(this.appGlobalService, this.profile.grade,
               contentSearchCriteria.grade, 'gradeLevel');
           }
+
+          contentSearchCriteria.channel = applyProfileFilter(this.appGlobalService, [tenantChannelId],
+          contentSearchCriteria.channel, 'channel');
         }
         return contentSearchCriteria;
       }

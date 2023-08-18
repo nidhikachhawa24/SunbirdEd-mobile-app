@@ -166,8 +166,10 @@ export class LoginNavigationHandlerService {
                 if (isDefaultChannelProfile) {
                     title = await this.appVersion.getAppName();
                 }
+//                 this.preferences.putString(PreferenceKey.APP_LOGO, tenantInfo.logo).toPromise().then();
                 this.preferences.putString(PreferenceKey.APP_LOGO, tenantLogo).toPromise().then();
                 this.preferences.putString(PreferenceKey.APP_NAME, title).toPromise().then();
+//                 (window as any).splashscreen.setContent(title, tenantInfo.appLogo);
                 (window as any).splashscreen.setContent(title, tenantLogo);
                 resolve();
             } catch (error) {
