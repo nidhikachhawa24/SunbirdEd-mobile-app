@@ -1,26 +1,45 @@
+// This file can be replaced during build by using the `fileReplacements` array.
+// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
+// The list of file replacements can be found in `angular.json`.
+
 export const configuration = {
-    production: false,
-    staging: true,
-    developement: false,
-    hmr: false,
-    debug: false
-  }
+  production: false,
+  staging: false,
+  hmr: false,
+  debug: false
+};
 
 export const buildConfig = {
-    APPLICATION_ID: "org.sunbird.app.staging",
-    BASE_URL: "https://staging.sunbirded.org",
-    BUILD_TYPE: "debug",
-    CHANNEL_ID: "505c7c48ac6dc1edc9b08f21db5a571d",
-    DEBUG: true,
-    FLAVOR: "staging",
-    MAX_COMPATIBILITY_LEVEL: 5,
-    MOBILE_APP_CONSUMER: "mobile_device",
-    MOBILE_APP_KEY: "sunbird-0.1",
-    MOBILE_APP_SECRET: "",
-    REAL_VERSION_NAME: "6.0.local.0-debug",
-    SUPPORT_EMAIL: "dummy@example.com",
-    USE_CRASHLYTICS: false,
-    VERSION_CODE: 1,
-    VERSION_NAME: "6.0.local"
+  DEBUG: true,
+  APPLICATION_ID: "dev.sunbirdsaas.app",
+  BUILD_TYPE: "debug",
+  FLAVOR: "dev",
+  VERSION_CODE: 1,
+  VERSION_NAME: "release-8",
+  // Field from product flavor: staging
+  BASE_URL: "https://dev.sunbirdsaas.com",
+  // Field from product flavor: staging
+  CHANNEL_ID: "01358974742001254423",
+  // Field from product flavor: staging
+  MAX_COMPATIBILITY_LEVEL: 5,
+  // Field from product flavor: staging
+  MOBILE_APP_CONSUMER: "mobile_device",
+  // Field from product flavor: staging
+  MOBILE_APP_KEY: "dev.sunbird.com-mobile-app-sunbirdsaas-11",
+  // Field from product flavor: staging
+  MOBILE_APP_SECRET: "j6o9v10SIODaKPCQeByyesB7CH5nnnxj",
+  // Field from the variant API
+  REAL_VERSION_NAME: "release-8",
+  // Field from default config.
+  SUPPORT_EMAIL: "nidhi_k@tekditechnologies.com",
+  // Field from build type: debug
+  USE_CRASHLYTICS: false
 }
-  
+/*
+ * For easier debugging in development mode, you can import the following file
+ * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
+ *
+ * This import should be commented out in production mode because it will have a negative impact
+ * on performance if an error is thrown.
+ */
+// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
