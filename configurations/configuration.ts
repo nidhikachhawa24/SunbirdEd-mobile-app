@@ -11,27 +11,27 @@ export const configuration = {
 
 export const buildConfig = {
   DEBUG: true,
-  APPLICATION_ID: "APPLICATION_ID",
-  BUILD_TYPE: "BUILD_TYPE",
-  FLAVOR: "FLAVOR",
+  APPLICATION_ID: "dev.sunbirdsaas.app",
+  BUILD_TYPE: "debug",
+  FLAVOR: "dev",
   VERSION_CODE: 1,
-  VERSION_NAME: "VERSION_NAME",
+  VERSION_NAME: "release-8",
   // Field from product flavor: staging
-  BASE_URL: "BASE_URL",
+  BASE_URL: "https://sunbirdsaas.com",
   // Field from product flavor: staging
-  CHANNEL_ID: "CHANNEL_ID",
+  CHANNEL_ID: "01358974742001254423",
   // Field from product flavor: staging
   MAX_COMPATIBILITY_LEVEL: 5,
   // Field from product flavor: staging
-  MOBILE_APP_CONSUMER: "MOBILE_APP_CONSUMER",
+  MOBILE_APP_CONSUMER: "mobile_device",
   // Field from product flavor: staging
-  MOBILE_APP_KEY: "APP_KEY",
+  MOBILE_APP_KEY: "dev.sunbird.com-mobile-app-sunbirdsaas-11",
   // Field from product flavor: staging
-  MOBILE_APP_SECRET: "APP_SECRET",
+  MOBILE_APP_SECRET: "VRqSm3K0cuR6aLxkmY0tL63FC48YyDi6",
   // Field from the variant API
-  REAL_VERSION_NAME: "REAL_VERSION_NAME",
+  REAL_VERSION_NAME: "release-8",
   // Field from default config.
-  SUPPORT_EMAIL: "SUPPORT_EMAIL",
+  SUPPORT_EMAIL: "nidhi_k@tekditechnologies.com",
   // Field from build type: debug
   USE_CRASHLYTICS: false
 }

@@ -333,16 +333,16 @@ export const sunbirdSdkFactory =
       // }));
 
       const buildConfigValues = {
-        APPLICATION_ID: "org.sunbird.app.staging",
-        BASE_URL: "https://staging.sunbirded.org",
+        APPLICATION_ID: "dev.sunbirdsaas.app",
+        BASE_URL: "https://sunbirdsaas.com",
         BUILD_TYPE: "debug",
-        CHANNEL_ID: "505c7c48ac6dc1edc9b08f21db5a571d",
+        CHANNEL_ID: "01358974742001254423",
         DEBUG: true,
-        FLAVOR: "staging",
+        FLAVOR: "dev",
         MAX_COMPATIBILITY_LEVEL: 5,
         MOBILE_APP_CONSUMER: "mobile_device",
-        MOBILE_APP_KEY: "sunbird-0.1",
-        MOBILE_APP_SECRET: "c0MsZyjLdKYMz255KKRvP0TxVbkeNFlx",
+        MOBILE_APP_KEY: "dev.sunbirdsaas.com-mobile-app-sunbirdsaas-11",
+        MOBILE_APP_SECRET: "VRqSm3K0cuR6aLxkmY0tL63FC48YyDi6",
         REAL_VERSION_NAME: "6.0.local.0-debug",
         SUPPORT_EMAIL: "dummy@example.com",
         USE_CRASHLYTICS: false,

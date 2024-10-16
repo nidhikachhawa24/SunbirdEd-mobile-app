@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'org.sunbird.app',
+  appId: 'dev.sunbirdsaas.app',
   appName: 'Sunbird',
   webDir: "www",
   loggingBehavior: "none",
@@ -16,7 +16,7 @@ const config: CapacitorConfig = {
       "ANDROID_DEFAULT_NOTIFICATION_ICON": "@mipmap/ic_launcher"
     },
     customtabs: {
-      "URL_SCHEME": "org.sunbird.app",
+      "URL_SCHEME": "dev.sunbirdsaas.app",
       "URL_HOST": "mobile",
     },
     "window.plugins.googleplus": {

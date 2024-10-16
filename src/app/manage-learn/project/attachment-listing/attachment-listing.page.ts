@@ -174,7 +174,7 @@ export class AttachmentListingPage implements OnInit {
   }
   openFile(attachment) {
       const fileOpenerOptions: FileOpenerOptions = {
-      filePath: this.path + '+' + attachment.name,
+      filePath: this.path + '/' + attachment.name,
       contentType:  attachment.type,
     }
     FileOpener.open(fileOpenerOptions);
